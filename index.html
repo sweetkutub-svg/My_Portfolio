@@ -6,6 +6,7 @@
 <title>Sk Kutubuddin — Web Developer</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Outfit:wght@200;300;400;500;600&family=Fira+Code:wght@300;400;500&display=swap" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 <style>
 :root{
   --bg:#07090f;--bg2:#0c0f1a;--bg3:#111827;
@@ -59,7 +60,6 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .fc3{top:55%;right:3%;animation:floatY 7s ease-in-out 1s infinite}
 .hero-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;width:100%;position:relative;z-index:2}
 
-/* photo */
 .photo-wrap{display:flex;justify-content:center;align-items:center;position:relative}
 .ring1{position:absolute;width:340px;height:340px;border-radius:50%;border:1px solid rgba(109,40,217,0.2);animation:spin 22s linear infinite}
 .ring2{position:absolute;width:295px;height:295px;border-radius:50%;border:1px dashed rgba(34,211,238,0.12);animation:spin 16s linear infinite reverse}
@@ -69,7 +69,6 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .bdot{width:7px;height:7px;background:#22c55e;border-radius:50%;animation:pulse 2s ease infinite}
 .btxt{font-family:'Syne',sans-serif;font-size:.62rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted)}
 
-/* hero text */
 .htag{display:inline-flex;align-items:center;gap:.6rem;background:rgba(109,40,217,0.1);border:1px solid rgba(109,40,217,0.25);padding:.4rem 1rem;border-radius:100px;margin-bottom:1.8rem;animation:fadeUp .8s ease .2s both}
 .htag span{font-family:'Fira Code',monospace;font-size:.7rem;color:var(--p3);letter-spacing:1px}
 .hdot{width:6px;height:6px;background:var(--p3);border-radius:50%;animation:pulse 2s ease infinite}
@@ -90,11 +89,11 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--p1),transparent)}
 .scroll-txt{font-family:'Syne',sans-serif;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--dim);writing-mode:vertical-rl}
 
-/* MARQUEE */
-.mq{padding:1.1rem 0;background:rgba(109,40,217,0.1);border-top:1px solid rgba(109,40,217,0.18);border-bottom:1px solid rgba(109,40,217,0.18);overflow:hidden}
+/* MARQUEE — fixed bright colors */
+.mq{padding:1.1rem 0;background:rgba(109,40,217,0.15);border-top:1px solid rgba(109,40,217,0.4);border-bottom:1px solid rgba(109,40,217,0.4);overflow:hidden}
 .mq-track{display:flex;gap:3rem;animation:marquee 22s linear infinite;white-space:nowrap}
-.mq-item{font-family:'Fira Code',monospace;font-size:.78rem;color:rgba(109,40,217,0.65);display:flex;align-items:center;gap:1.5rem;flex-shrink:0;letter-spacing:1px}
-.mq-dot{width:4px;height:4px;background:var(--p3);border-radius:50%;opacity:.6}
+.mq-item{font-family:'Fira Code',monospace;font-size:.85rem;color:#c4b5fd;display:flex;align-items:center;gap:1.5rem;flex-shrink:0;letter-spacing:1.5px;font-weight:500;text-shadow:0 0 12px rgba(167,139,250,0.5)}
+.mq-dot{width:5px;height:5px;background:#22d3ee;border-radius:50%;opacity:1;box-shadow:0 0 8px rgba(34,211,238,0.8)}
 
 /* SECTION BASE */
 .sec{padding:8rem 5%;position:relative;z-index:2}
@@ -105,12 +104,12 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .sec-line{width:48px;height:2px;background:var(--grad);border-radius:2px;margin-bottom:3.5rem}
 .body-p{font-size:.95rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1.2rem}
 
-/* REVEAL */
-.rv{opacity:0;transform:translateY(40px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+/* BIDIRECTIONAL REVEAL — reset when out of view */
+.rv{opacity:0;transform:translateY(40px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
 .rv.vis{opacity:1;transform:none}
-.rvl{opacity:0;transform:translateX(-50px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rvl{opacity:0;transform:translateX(-50px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
 .rvl.vis{opacity:1;transform:none}
-.rvr{opacity:0;transform:translateX(50px);transition:opacity .85s cubic-bezier(.16,1,.3,1),transform .85s cubic-bezier(.16,1,.3,1)}
+.rvr{opacity:0;transform:translateX(50px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
 .rvr.vis{opacity:1;transform:none}
 .d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
 
@@ -175,6 +174,53 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .plink{display:inline-flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--p1);text-decoration:none;font-weight:600;transition:all .3s}
 .plink:hover{color:var(--p3);gap:.8rem}
 
+/* TIMELINE — new section */
+.timeline-sec{background:var(--bg);overflow:hidden}
+.timeline-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(109,40,217,0.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(34,211,238,0.05) 0%,transparent 50%)}
+.tl-wrap{position:relative;z-index:2;max-width:780px;margin:0 auto}
+.tl-line{position:absolute;left:50%;top:0;bottom:0;width:1px;background:linear-gradient(to bottom,transparent,rgba(109,40,217,0.4),rgba(34,211,238,0.3),transparent);transform:translateX(-50%)}
+.tl-item{display:flex;gap:3rem;align-items:flex-start;margin-bottom:4rem;position:relative}
+.tl-item:nth-child(even){flex-direction:row-reverse}
+.tl-side{flex:1;text-align:right}
+.tl-item:nth-child(even) .tl-side{text-align:left}
+.tl-dot{width:14px;height:14px;border-radius:50%;background:var(--grad);border:3px solid var(--bg);box-shadow:0 0 20px rgba(109,40,217,0.6);flex-shrink:0;margin-top:.4rem;position:relative;z-index:2}
+.tl-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.4rem 1.6rem;flex:1;transition:all .3s}
+.tl-card:hover{border-color:rgba(109,40,217,0.35);background:rgba(109,40,217,0.05)}
+.tl-year{font-family:'Fira Code',monospace;font-size:.7rem;color:var(--p3);letter-spacing:1px;margin-bottom:.4rem}
+.tl-title{font-family:'Syne',sans-serif;font-size:1rem;color:var(--text);font-weight:700;margin-bottom:.3rem}
+.tl-desc{font-size:.83rem;color:var(--muted);line-height:1.7;font-weight:300}
+
+/* STATS — new section */
+.stats-sec{background:var(--bg2);padding:5rem 5%;position:relative;overflow:hidden}
+.stats-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(109,40,217,0.06),rgba(34,211,238,0.03))}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;z-index:2}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem 1.5rem;text-align:center;transition:all .4s;position:relative;overflow:hidden}
+.stat-card::before{content:'';position:absolute;inset:0;background:var(--grad);opacity:0;transition:opacity .4s}
+.stat-card:hover::before{opacity:.05}
+.stat-card:hover{border-color:rgba(109,40,217,0.4);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.3)}
+.stat-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.5rem}
+.stat-label{font-family:'Fira Code',monospace;font-size:.72rem;color:var(--muted);letter-spacing:1px}
+
+/* SERVICES / WHAT I DO — new section */
+.services-sec{background:var(--bg);overflow:hidden}
+.services-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(109,40,217,0.07) 0%,transparent 55%)}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative;z-index:2}
+.srv-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:all .4s;position:relative;overflow:hidden}
+.srv-card::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.srv-card:hover::after{transform:scaleX(1)}
+.srv-card:hover{border-color:rgba(109,40,217,0.3);transform:translateY(-5px);background:rgba(109,40,217,0.04)}
+.srv-ico{width:52px;height:52px;border-radius:12px;background:var(--gradsoft);border:1px solid rgba(109,40,217,0.25);display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:1.3rem}
+.srv-title{font-family:'Syne',sans-serif;font-size:1.05rem;color:var(--text);font-weight:700;margin-bottom:.7rem}
+.srv-desc{font-size:.84rem;color:var(--muted);line-height:1.75;font-weight:300}
+
+/* TESTIMONIALS / QUOTE — new section */
+.quote-sec{background:var(--bg2);overflow:hidden;padding:6rem 5%}
+.quote-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(109,40,217,0.05),rgba(34,211,238,0.03))}
+.quote-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;text-align:center}
+.quote-mark{font-family:'Syne',sans-serif;font-size:8rem;line-height:.5;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.3;margin-bottom:1rem}
+.quote-text{font-family:'Syne',sans-serif;font-size:1.5rem;color:var(--text);font-weight:600;line-height:1.5;margin-bottom:2rem;letter-spacing:-.3px}
+.quote-text .g{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
 /* CONTACT */
 .contact-sec{background:var(--bg);overflow:hidden}
 .contact-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=1400&q=70&auto=format');background-size:cover;background-position:center;filter:brightness(0.07) saturate(0.2)}
@@ -197,6 +243,21 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .fsub{width:100%;padding:1rem;background:var(--grad);color:#fff;border:none;font-family:'Syne',sans-serif;font-size:.76rem;letter-spacing:3px;text-transform:uppercase;font-weight:600;cursor:none;border-radius:8px;transition:all .4s;box-shadow:0 4px 20px rgba(109,40,217,0.3)}
 .fsub:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(109,40,217,0.5)}
 .fsub.sent{background:linear-gradient(135deg,#22c55e,#16a34a)}
+
+/* FAQ — new section */
+.faq-sec{background:var(--bg2);overflow:hidden}
+.faq-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(34,211,238,0.04) 0%,transparent 50%)}
+.faq-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start;position:relative;z-index:2}
+.faq-list{display:flex;flex-direction:column;gap:1rem}
+.faq-item{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;transition:border-color .3s}
+.faq-item.open{border-color:rgba(109,40,217,0.35)}
+.faq-q{padding:1.2rem 1.4rem;display:flex;justify-content:space-between;align-items:center;cursor:pointer;gap:1rem}
+.faq-q-txt{font-family:'Syne',sans-serif;font-size:.9rem;color:var(--text);font-weight:600}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--gradsoft);border:1px solid rgba(109,40,217,0.2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.7rem;color:var(--p3);transition:transform .3s}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s ease}
+.faq-a-inner{padding:0 1.4rem 1.2rem;font-size:.87rem;color:var(--muted);line-height:1.75;font-weight:300}
+.faq-item.open .faq-a{max-height:200px}
 
 /* FOOTER */
 footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;position:relative;z-index:2}
@@ -225,9 +286,14 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
   .photo-wrap{order:-1}
   .hero-desc{margin:0 auto 2.5rem}
   .hero-btns,.hero-soc{justify-content:center}
-  .about-inner,.skills-inner,.contact-inner{grid-template-columns:1fr;gap:3rem}
+  .about-inner,.skills-inner,.contact-inner,.faq-inner{grid-template-columns:1fr;gap:3rem}
   .ab1,.ab2{display:none}
   .proj-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .tl-line{left:20px}
+  .tl-item,.tl-item:nth-child(even){flex-direction:row}
+  .tl-side{display:none}
   .nav-links,.nav-cv{display:none}
   .ham{display:flex}
   nav.mob-open .nav-links{display:flex;flex-direction:column;position:fixed;top:68px;left:0;right:0;background:rgba(7,9,15,0.98);backdrop-filter:blur(24px);padding:2rem 5%;border-bottom:1px solid var(--border);gap:1.8rem}
@@ -243,6 +309,9 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
   .sec{padding:5rem 5%}
   .chips{grid-template-columns:1fr}
   .fc{display:none}
+  .stats-grid{grid-template-columns:1fr 1fr}
+  .srv-grid{grid-template-columns:1fr}
+  .quote-text{font-size:1.1rem}
 }
 </style>
 </head>
@@ -278,7 +347,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
       <div class="htag"><span class="hdot"></span><span>Available for opportunities</span></div>
       <h1 class="hero-name">Sk<br/><span class="g">Kutubuddin</span></h1>
       <div class="hero-role">Web Developer &amp; Programming Enthusiast</div>
-      <p class="hero-desc">Passionate developer currently pursuing a 3-year diploma (2024–2027). Building creative web experiences with HTML, CSS, JavaScript, C, and Python.</p>
+      <p class="hero-desc">Passionate developer currently pursuing a 3-year diploma (2024–2027). Building creative web experiences with HTML, CSS, JavaScript, C, and Python — one project at a time.</p>
       <div class="hero-btns">
         <a href="Kutub_Resume.pdf" download class="btn-fill"><i class="fas fa-download"></i> Download CV</a>
         <a href="#contact" class="btn-out"><i class="fas fa-envelope"></i> Contact Me</a>
@@ -303,6 +372,17 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 <!-- MARQUEE -->
 <div class="mq"><div class="mq-track" id="mqt"></div></div>
 
+<!-- STATS -->
+<section class="stats-sec">
+  <div class="stats-bg"></div>
+  <div class="stats-grid">
+    <div class="stat-card rv"><div class="stat-num">2nd</div><div class="stat-label">Year of Diploma</div></div>
+    <div class="stat-card rv d1"><div class="stat-num">5+</div><div class="stat-label">Languages Learned</div></div>
+    <div class="stat-card rv d2"><div class="stat-num">3+</div><div class="stat-label">Projects Built</div></div>
+    <div class="stat-card rv d3"><div class="stat-num">∞</div><div class="stat-label">Curiosity Level</div></div>
+  </div>
+</section>
+
 <!-- ABOUT -->
 <section id="about" class="about-sec sec">
   <div class="about-bg"></div><div class="about-ov"></div>
@@ -320,12 +400,55 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
       <h2 class="sec-h">Learning &amp; <span class="g">Growing</span><br/>Every Day</h2>
       <div class="sec-line"></div>
       <p class="body-p">I'm a passionate learner in my 2nd year of a 3-year diploma program (2024–2027). Exploring web development and programming, building real projects to strengthen my skills.</p>
-      <p class="body-p">Every line of code I write is a step towards becoming a better developer. I believe in learning by doing and pushing creative boundaries with every project.</p>
+      <p class="body-p">Every line of code I write is a step towards becoming a better developer. I believe in learning by doing and pushing creative boundaries with every project I take on.</p>
+      <p class="body-p">Based in Kolkata, India — where chai fuels my late-night coding sessions. I'm always excited to collaborate, learn, and grow alongside other developers.</p>
       <div class="acards">
         <div class="acard rv d1"><div class="acard-ico">🎓</div><h4>Current Year</h4><p>2nd Year Student</p></div>
         <div class="acard rv d2"><div class="acard-ico">📅</div><h4>Duration</h4><p>2024 – 2027</p></div>
-        <div class="acard rv d3"><div class="acard-ico">💡</div><h4>Focus</h4><p>Web Dev & Code</p></div>
+        <div class="acard rv d3"><div class="acard-ico">📍</div><h4>Location</h4><p>Kolkata, India</p></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT I DO / SERVICES -->
+<section class="services-sec sec">
+  <div class="services-bg"></div>
+  <div style="position:relative;z-index:2;text-align:center;margin-bottom:4rem">
+    <span class="sec-lbl rv">What I Do</span>
+    <h2 class="sec-h rv d1">My <span class="g">Services</span></h2>
+    <div class="sec-line rv d2" style="margin:0 auto"></div>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card rv">
+      <div class="srv-ico">🌐</div>
+      <div class="srv-title">Web Development</div>
+      <p class="srv-desc">Building responsive, interactive websites from scratch using HTML5, CSS3, and JavaScript. Focused on clean code and pixel-perfect design.</p>
+    </div>
+    <div class="srv-card rv d1">
+      <div class="srv-ico">🎨</div>
+      <div class="srv-title">UI / UX Design</div>
+      <p class="srv-desc">Creating visually appealing layouts with smooth user experiences. I pay attention to colors, spacing, and every small detail that matters.</p>
+    </div>
+    <div class="srv-card rv d2">
+      <div class="srv-ico">🐍</div>
+      <div class="srv-title">Python Scripting</div>
+      <p class="srv-desc">Writing useful Python scripts for automation, problem solving, and small tools. Always learning new libraries to expand my capabilities.</p>
+    </div>
+    <div class="srv-card rv d3">
+      <div class="srv-ico">⚙️</div>
+      <div class="srv-title">C Programming</div>
+      <p class="srv-desc">Building a strong foundation in logic and algorithms through C. Understanding core programming concepts that make me a better developer overall.</p>
+    </div>
+    <div class="srv-card rv d4">
+      <div class="srv-ico">📱</div>
+      <div class="srv-title">Responsive Design</div>
+      <p class="srv-desc">Making sure every project looks great on all devices — mobile, tablet, and desktop. No compromises on user experience across screen sizes.</p>
+    </div>
+    <div class="srv-card rv d5">
+      <div class="srv-ico">🔧</div>
+      <div class="srv-title">Version Control</div>
+      <p class="srv-desc">Managing projects with Git & GitHub — writing clean commits, maintaining repos, and collaborating effectively on code with others.</p>
     </div>
   </div>
 </section>
@@ -355,7 +478,58 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
         <div class="chip rv d4"><span class="chipdot"></span><span class="chipname">Problem Solving</span></div>
         <div class="chip rv d1"><span class="chipdot"></span><span class="chipname">Node.js (Learning)</span></div>
         <div class="chip rv d2"><span class="chipdot"></span><span class="chipname">MySQL (Learning)</span></div>
+        <div class="chip rv d3"><span class="chipdot"></span><span class="chipname">Bootstrap 5</span></div>
+        <div class="chip rv d4"><span class="chipdot"></span><span class="chipname">Linux Basics</span></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY / TIMELINE -->
+<section class="timeline-sec sec">
+  <div class="timeline-bg"></div>
+  <div style="text-align:center;margin-bottom:5rem;position:relative;z-index:2">
+    <span class="sec-lbl rv">Journey</span>
+    <h2 class="sec-h rv d1">My <span class="g">Coding Story</span></h2>
+    <div class="sec-line rv d2" style="margin:0 auto"></div>
+  </div>
+  <div class="tl-wrap">
+    <div class="tl-line"></div>
+    <div class="tl-item rv">
+      <div class="tl-side"></div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-year">2024 — Chapter 1</div>
+        <div class="tl-title">Diploma Begins 🎓</div>
+        <p class="tl-desc">Enrolled in a 3-year diploma program. First contact with C programming and HTML. Fell in love with logic and building things on screen.</p>
+      </div>
+    </div>
+    <div class="tl-item rv d1">
+      <div class="tl-card">
+        <div class="tl-year">2024 — Chapter 2</div>
+        <div class="tl-title">First Web Project ✨</div>
+        <p class="tl-desc">Built Imli Mix — my very first full web project. Learned how design and code work together to create real user experiences.</p>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-side"></div>
+    </div>
+    <div class="tl-item rv d2">
+      <div class="tl-side"></div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <div class="tl-year">2025 — Chapter 3</div>
+        <div class="tl-title">Python &amp; Git 🐍</div>
+        <p class="tl-desc">Started exploring Python scripting and version control with GitHub. Pushed code publicly for the first time — exciting milestone!</p>
+      </div>
+    </div>
+    <div class="tl-item rv d3">
+      <div class="tl-card">
+        <div class="tl-year">2025–2027 — Chapter 4</div>
+        <div class="tl-title">The Road Ahead 🚀</div>
+        <p class="tl-desc">Learning Node.js, MySQL, and backend development. Building bigger projects, contributing to open source, and leveling up every day.</p>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-side"></div>
     </div>
   </div>
 </section>
@@ -377,7 +551,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
       <div class="proj-body">
         <div class="ptags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span></div>
         <div class="pname">Imli Mix</div>
-        <p class="pdesc">An interactive web project showcasing creative design and functionality. Built as my first web development project with focus on UI/UX.</p>
+        <p class="pdesc">An interactive web project showcasing creative design and functionality. Built as my first web development project with focus on UI/UX and a memorable user experience.</p>
         <a href="https://sweetkutub-svg.github.io/Imli_mix/" target="_blank" class="plink">View Live <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
@@ -391,7 +565,93 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
       <div class="proj-body">
         <div class="ptags"><span class="ptag">In Progress</span></div>
         <div class="pname">Next Project</div>
-        <p class="pdesc">Currently working on something exciting. Stay tuned — building it with everything I've learned so far!</p>
+        <p class="pdesc">Currently working on something exciting. Combining everything I've learned — from responsive design to JavaScript logic. Stay tuned!</p>
+      </div>
+    </div>
+    <div class="proj-card rv d2">
+      <div class="proj-img">
+        <div class="proj-soon">
+          <span style="font-size:2.5rem;opacity:.15">💡</span>
+          <span style="font-family:'Fira Code',monospace;font-size:.72rem;color:var(--dim)">// Idea brewing...</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="ptags"><span class="ptag">Planned</span><span class="ptag">Python</span></div>
+        <div class="pname">Python Tool</div>
+        <p class="pdesc">A small Python utility project planned for 2025. Focused on automation and problem solving using scripting skills I'm building.</p>
+      </div>
+    </div>
+    <div class="proj-card rv d3">
+      <div class="proj-img">
+        <div class="proj-soon">
+          <span style="font-size:2.5rem;opacity:.15">🎓</span>
+          <span style="font-family:'Fira Code',monospace;font-size:.72rem;color:var(--dim)">// Learning project...</span>
+        </div>
+      </div>
+      <div class="proj-body">
+        <div class="ptags"><span class="ptag">Planned</span><span class="ptag">Node.js</span><span class="ptag">MySQL</span></div>
+        <div class="pname">Full Stack App</div>
+        <p class="pdesc">A full-stack web application as part of my backend learning journey. Will include user auth, database, and a clean REST API.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE SECTION -->
+<section class="quote-sec">
+  <div class="quote-bg"></div>
+  <div class="quote-inner rv">
+    <div class="quote-mark">"</div>
+    <p class="quote-text">Code is not just instructions for machines — it's <span class="g">creative expression</span> turned into something real that people can use and feel.</p>
+    <div style="font-family:'Fira Code',monospace;font-size:.75rem;color:var(--dim);letter-spacing:1px">— Sk Kutubuddin, still learning, always building</div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec sec">
+  <div class="faq-bg"></div>
+  <div class="faq-inner">
+    <div class="rvl">
+      <span class="sec-lbl">FAQ</span>
+      <h2 class="sec-h">Common <span class="g">Questions</span></h2>
+      <div class="sec-line"></div>
+      <p class="body-p">A few things people often ask me. If you have more questions, just reach out through the contact form!</p>
+    </div>
+    <div class="faq-list rvr">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-txt">Are you available for freelance projects?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Yes! I'm actively looking for freelance opportunities, internships, and collaboration projects. As a student I'm eager to work on real-world problems and gain hands-on experience alongside my studies.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-txt">What kind of projects do you enjoy?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">I love building creative web projects — landing pages, portfolios, interactive UIs, and small web apps. I'm also very interested in Python scripting and automation tools. Anything where design meets logic excites me.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-txt">How do I contact you for a project?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">You can fill out the contact form below, email me directly at codewithkutub@gmail.com, or reach out on LinkedIn. I typically respond within 24 hours!</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-txt">Are you open to internship opportunities?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">Absolutely! Internships are a great way to learn from experienced developers and work on real products. I'm looking for opportunities that will help me grow as a developer while contributing meaningfully to a team.</div></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-txt">What are your future learning goals?</span>
+          <span class="faq-icon"><i class="fas fa-plus"></i></span>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">I'm planning to dive deeper into Node.js and MySQL for backend development, explore React for modern frontend work, and eventually build full-stack applications. Long term, I want to specialize in building scalable web platforms.</div></div>
       </div>
     </div>
   </div>
@@ -405,11 +665,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
       <span class="sec-lbl">Contact</span>
       <h2 class="sec-h">Let's <span class="g">Work</span><br/>Together</h2>
       <div class="sec-line"></div>
-      <p class="body-p">I'm always excited to work on new projects and collaborate. Feel free to reach out!</p>
+      <p class="body-p">I'm always excited to work on new projects and collaborate with creative people. Whether it's a small website or a big idea — feel free to reach out!</p>
       <div class="ci-list">
         <div class="ci"><div class="ci-ico"><i class="fas fa-envelope"></i></div><span class="ci-txt">codewithkutub@gmail.com</span></div>
         <div class="ci"><div class="ci-ico"><i class="fas fa-phone"></i></div><span class="ci-txt">+91 62968 88213</span></div>
-        <div class="ci"><div class="ci-ico"><i class="fas fa-map-marker-alt"></i></div><span class="ci-txt">India</span></div>
+        <div class="ci"><div class="ci-ico"><i class="fas fa-map-marker-alt"></i></div><span class="ci-txt">Kolkata, West Bengal, India</span></div>
       </div>
       <div class="soc-row">
         <a href="https://github.com/sweetkutub-svg" target="_blank" class="socpill"><i class="fab fa-github"></i> GitHub</a>
@@ -420,7 +680,8 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
       <form class="cform" id="cform">
         <div class="fg"><label>Your Name</label><input type="text" placeholder="John Doe" required/></div>
         <div class="fg"><label>Email Address</label><input type="email" placeholder="john@email.com" required/></div>
-        <div class="fg"><label>Message</label><textarea rows="5" placeholder="Tell me about your project..." required></textarea></div>
+        <div class="fg"><label>Subject</label><input type="text" placeholder="Project idea / Internship / Collaboration..."/></div>
+        <div class="fg"><label>Message</label><textarea rows="5" placeholder="Tell me about your project or just say hi!" required></textarea></div>
         <button type="submit" class="fsub" id="fsub">Send Message <i class="fas fa-paper-plane"></i></button>
       </form>
     </div>
@@ -430,10 +691,11 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 <!-- FOOTER -->
 <footer>
   <span class="flogo">SK.</span>
-  <p class="fp">© 2025 Sk Kutubuddin. Crafted with <span>♥</span> &amp; lots of coffee.</p>
-  <p class="fcode">console.log("Thanks for visiting!");</p>
+  <p class="fp">© 2025 Sk Kutubuddin. Crafted with <span>♥</span> &amp; lots of chai.</p>
+  <p class="fcode">Kolkata, India 🇮🇳 &hearts;</p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
 // CURSOR
 const cur=document.getElementById('cur'),curl=document.getElementById('curl');
@@ -454,17 +716,38 @@ ham.addEventListener('click',()=>{ham.classList.toggle('open');nav.classList.tog
 document.querySelectorAll('.nav-links a').forEach(a=>a.addEventListener('click',()=>{ham.classList.remove('open');nav.classList.remove('mob-open')}));
 
 // MARQUEE
-const mqi=["HTML5","CSS3","JavaScript","Python","C Programming","Git & GitHub","Responsive Design","Web Developer","2024–2027","Kolkata, India"];
+const mqi=["HTML5","CSS3","JavaScript","Python","C Programming","Git & GitHub","Responsive Design","Web Developer","2024–2027","Kolkata, India","Bootstrap 5","Open to Work"];
 const t=document.getElementById('mqt');
 [...mqi,...mqi].forEach(s=>{const d=document.createElement('div');d.className='mq-item';d.innerHTML=s+'<span class="mq-dot"></span>';t.appendChild(d)});
 
-// REVEAL
-const io=new IntersectionObserver(en=>{en.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target)}})},{threshold:.1});
-document.querySelectorAll('.rv,.rvl,.rvr').forEach(el=>io.observe(el));
+// BIDIRECTIONAL REVEAL — animates in AND out on scroll
+const allRv=[...document.querySelectorAll('.rv,.rvl,.rvr')];
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add('vis');
+    } else {
+      // Remove vis so animation replays when scrolled back up
+      e.target.classList.remove('vis');
+    }
+  });
+},{threshold:.12});
+allRv.forEach(el=>io.observe(el));
 
-// SKILL BARS
+// SKILL BARS — re-trigger on scroll up too
+const skillFills=document.querySelectorAll('.sk-fill');
+let barsAnimated=false;
 const sio=new IntersectionObserver(en=>{
-  en.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('.sk-fill').forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+'%'},200)});sio.unobserve(e.target)}});
+  en.forEach(e=>{
+    if(e.isIntersecting){
+      skillFills.forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+'%'},200)});
+      barsAnimated=true;
+    } else {
+      // Reset bars so they animate again on re-enter
+      skillFills.forEach(b=>{b.style.width='0'});
+      barsAnimated=false;
+    }
+  });
 },{threshold:.2});
 document.querySelectorAll('.skills-sec').forEach(el=>sio.observe(el));
 
@@ -483,6 +766,16 @@ document.getElementById('cform').addEventListener('submit',function(e){
   const btn=document.getElementById('fsub');
   btn.innerHTML='Message Sent! ✓';btn.classList.add('sent');this.reset();
   setTimeout(()=>{btn.innerHTML='Send Message <i class="fas fa-paper-plane"></i>';btn.classList.remove('sent')},4000);
+});
+
+// FAQ ACCORDION
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen) item.classList.add('open');
+  });
 });
 </script>
 </body>
