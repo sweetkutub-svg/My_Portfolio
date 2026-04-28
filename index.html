@@ -89,7 +89,7 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .scroll-line{width:1px;height:60px;background:linear-gradient(to bottom,var(--p1),transparent)}
 .scroll-txt{font-family:'Syne',sans-serif;font-size:.58rem;letter-spacing:3px;text-transform:uppercase;color:var(--dim);writing-mode:vertical-rl}
 
-/* MARQUEE — fixed bright colors */
+/* MARQUEE */
 .mq{padding:1.1rem 0;background:rgba(109,40,217,0.15);border-top:1px solid rgba(109,40,217,0.4);border-bottom:1px solid rgba(109,40,217,0.4);overflow:hidden}
 .mq-track{display:flex;gap:3rem;animation:marquee 22s linear infinite;white-space:nowrap}
 .mq-item{font-family:'Fira Code',monospace;font-size:.85rem;color:#c4b5fd;display:flex;align-items:center;gap:1.5rem;flex-shrink:0;letter-spacing:1.5px;font-weight:500;text-shadow:0 0 12px rgba(167,139,250,0.5)}
@@ -104,7 +104,7 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .sec-line{width:48px;height:2px;background:var(--grad);border-radius:2px;margin-bottom:3.5rem}
 .body-p{font-size:.95rem;color:var(--muted);line-height:1.9;font-weight:300;margin-bottom:1.2rem}
 
-/* BIDIRECTIONAL REVEAL — reset when out of view */
+/* BIDIRECTIONAL REVEAL */
 .rv{opacity:0;transform:translateY(40px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
 .rv.vis{opacity:1;transform:none}
 .rvl{opacity:0;transform:translateX(-50px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
@@ -165,7 +165,6 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .proj-img .img-hover{opacity:0}
 .proj-card:hover .img-main{opacity:0;transform:scale(1.05)}
 .proj-card:hover .img-hover{opacity:1}
-.proj-soon{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.8rem}
 .proj-body{padding:1.8rem}
 .ptags{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1rem}
 .ptag{font-family:'Fira Code',monospace;font-size:.63rem;padding:.25rem .7rem;border-radius:100px;background:rgba(109,40,217,0.1);border:1px solid rgba(109,40,217,0.22);color:var(--p3);letter-spacing:.5px}
@@ -174,7 +173,13 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .plink{display:inline-flex;align-items:center;gap:.5rem;font-family:'Syne',sans-serif;font-size:.7rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--p1);text-decoration:none;font-weight:600;transition:all .3s}
 .plink:hover{color:var(--p3);gap:.8rem}
 
-/* TIMELINE — new section */
+/* PROJECT PREVIEW — iframe based */
+.proj-preview{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;background:var(--bg3)}
+.proj-preview iframe{width:200%;height:200%;border:none;transform:scale(0.5);transform-origin:top left;pointer-events:none}
+.proj-preview-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(7,9,15,0.6) 100%)}
+.proj-preview:hover .proj-preview-overlay{background:linear-gradient(to bottom,transparent 40%,rgba(7,9,15,0.4) 100%)}
+
+/* TIMELINE */
 .timeline-sec{background:var(--bg);overflow:hidden}
 .timeline-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(109,40,217,0.08) 0%,transparent 60%),radial-gradient(ellipse at 80% 20%,rgba(34,211,238,0.05) 0%,transparent 50%)}
 .tl-wrap{position:relative;z-index:2;max-width:780px;margin:0 auto}
@@ -190,7 +195,7 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .tl-title{font-family:'Syne',sans-serif;font-size:1rem;color:var(--text);font-weight:700;margin-bottom:.3rem}
 .tl-desc{font-size:.83rem;color:var(--muted);line-height:1.7;font-weight:300}
 
-/* STATS — new section */
+/* STATS */
 .stats-sec{background:var(--bg2);padding:5rem 5%;position:relative;overflow:hidden}
 .stats-bg{position:absolute;inset:0;background:linear-gradient(135deg,rgba(109,40,217,0.06),rgba(34,211,238,0.03))}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;position:relative;z-index:2}
@@ -201,7 +206,7 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .stat-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;margin-bottom:.5rem}
 .stat-label{font-family:'Fira Code',monospace;font-size:.72rem;color:var(--muted);letter-spacing:1px}
 
-/* SERVICES / WHAT I DO — new section */
+/* SERVICES */
 .services-sec{background:var(--bg);overflow:hidden}
 .services-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 60%,rgba(109,40,217,0.07) 0%,transparent 55%)}
 .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative;z-index:2}
@@ -213,7 +218,7 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .srv-title{font-family:'Syne',sans-serif;font-size:1.05rem;color:var(--text);font-weight:700;margin-bottom:.7rem}
 .srv-desc{font-size:.84rem;color:var(--muted);line-height:1.75;font-weight:300}
 
-/* TESTIMONIALS / QUOTE — new section */
+/* QUOTE */
 .quote-sec{background:var(--bg2);overflow:hidden;padding:6rem 5%}
 .quote-bg{position:absolute;inset:0;background:linear-gradient(to right,rgba(109,40,217,0.05),rgba(34,211,238,0.03))}
 .quote-inner{position:relative;z-index:2;max-width:700px;margin:0 auto;text-align:center}
@@ -244,7 +249,7 @@ nav.scrolled{background:rgba(7,9,15,0.93);backdrop-filter:blur(24px);border-bott
 .fsub:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(109,40,217,0.5)}
 .fsub.sent{background:linear-gradient(135deg,#22c55e,#16a34a)}
 
-/* FAQ — new section */
+/* FAQ */
 .faq-sec{background:var(--bg2);overflow:hidden}
 .faq-bg{position:absolute;inset:0;background:radial-gradient(ellipse at 20% 80%,rgba(34,211,238,0.04) 0%,transparent 50%)}
 .faq-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:6rem;align-items:start;position:relative;z-index:2}
@@ -378,7 +383,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
   <div class="stats-grid">
     <div class="stat-card rv"><div class="stat-num">2nd</div><div class="stat-label">Year of Diploma</div></div>
     <div class="stat-card rv d1"><div class="stat-num">5+</div><div class="stat-label">Languages Learned</div></div>
-    <div class="stat-card rv d2"><div class="stat-num">3+</div><div class="stat-label">Projects Built</div></div>
+    <div class="stat-card rv d2"><div class="stat-num">4+</div><div class="stat-label">Projects Built</div></div>
     <div class="stat-card rv d3"><div class="stat-num">∞</div><div class="stat-label">Curiosity Level</div></div>
   </div>
 </section>
@@ -411,7 +416,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
   </div>
 </section>
 
-<!-- WHAT I DO / SERVICES -->
+<!-- SERVICES -->
 <section class="services-sec sec">
   <div class="services-bg"></div>
   <div style="position:relative;z-index:2;text-align:center;margin-bottom:4rem">
@@ -543,7 +548,51 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
     <div class="sec-line rv d2"></div>
   </div>
   <div class="proj-grid">
+
+    <!-- PROJECT 1: MAISON E-Commerce -->
     <div class="proj-card rv">
+      <div class="proj-img">
+        <img class="img-main" src="maison-hero.png" alt="MAISON Store"/>
+        <img class="img-hover" src="maison-hover.png" alt="MAISON Store Preview"/>
+      </div>
+      <div class="proj-body">
+        <div class="ptags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span><span class="ptag">E-Commerce</span></div>
+        <div class="pname">MAISON Store</div>
+        <p class="pdesc">A luxury fashion e-commerce website with a full shopping experience — product catalog, bag &amp; wishlist functionality, size guide, and a sleek editorial aesthetic.</p>
+        <a href="https://sweetkutub-svg.github.io/maison-store_E-Commarce/" target="_blank" class="plink">View Live <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- PROJECT 2: Mondol Restaurant -->
+    <div class="proj-card rv d1">
+      <div class="proj-img">
+        <img class="img-main" src="mondol-hero.png" alt="Mondol Restaurant"/>
+        <img class="img-hover" src="mondol-hover.png" alt="Mondol Restaurant Preview"/>
+      </div>
+      <div class="proj-body">
+        <div class="ptags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span><span class="ptag">Restaurant</span></div>
+        <div class="pname">Mondol Restaurant</div>
+        <p class="pdesc">An elegant fine-dining restaurant website for a Kolkata establishment. Features signature menu showcase, chef profile, gallery, guest testimonials, and a table reservation system.</p>
+        <a href="https://sweetkutub-svg.github.io/MondolRestaurant/" target="_blank" class="plink">View Live <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- PROJECT 3: Rao's Restaurant -->
+    <div class="proj-card rv d2">
+      <div class="proj-img">
+        <img class="img-main" src="raos-hero.png" alt="Rao's Restaurant"/>
+        <img class="img-hover" src="raos-hover.png" alt="Rao's Restaurant Preview"/>
+      </div>
+      <div class="proj-body">
+        <div class="ptags"><span class="ptag">HTML</span><span class="ptag">CSS</span><span class="ptag">JavaScript</span><span class="ptag">Restaurant</span></div>
+        <div class="pname">Rao's Restaurant</div>
+        <p class="pdesc">A premium Indian fine-dining website with animated counters, signature dish cards, interactive full menu, photo gallery, patron reviews, and a complete reservation flow.</p>
+        <a href="https://sweetkutub-svg.github.io/Rao-s-Resturent/" target="_blank" class="plink">View Live <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- PROJECT 4: Imli Mix -->
+    <div class="proj-card rv d3">
       <div class="proj-img">
         <img class="img-main" src="imli-hero.png" alt="Imli Mix"/>
         <img class="img-hover" src="imli-products.png" alt="Imli Mix Products"/>
@@ -555,45 +604,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
         <a href="https://sweetkutub-svg.github.io/Imli_mix/" target="_blank" class="plink">View Live <i class="fas fa-arrow-right"></i></a>
       </div>
     </div>
-    <div class="proj-card rv d1">
-      <div class="proj-img">
-        <div class="proj-soon">
-          <span style="font-size:2.5rem;opacity:.2">🚀</span>
-          <span style="font-family:'Fira Code',monospace;font-size:.72rem;color:var(--dim)">// Coming soon...</span>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="ptags"><span class="ptag">In Progress</span></div>
-        <div class="pname">Next Project</div>
-        <p class="pdesc">Currently working on something exciting. Combining everything I've learned — from responsive design to JavaScript logic. Stay tuned!</p>
-      </div>
-    </div>
-    <div class="proj-card rv d2">
-      <div class="proj-img">
-        <div class="proj-soon">
-          <span style="font-size:2.5rem;opacity:.15">💡</span>
-          <span style="font-family:'Fira Code',monospace;font-size:.72rem;color:var(--dim)">// Idea brewing...</span>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="ptags"><span class="ptag">Planned</span><span class="ptag">Python</span></div>
-        <div class="pname">Python Tool</div>
-        <p class="pdesc">A small Python utility project planned for 2025. Focused on automation and problem solving using scripting skills I'm building.</p>
-      </div>
-    </div>
-    <div class="proj-card rv d3">
-      <div class="proj-img">
-        <div class="proj-soon">
-          <span style="font-size:2.5rem;opacity:.15">🎓</span>
-          <span style="font-family:'Fira Code',monospace;font-size:.72rem;color:var(--dim)">// Learning project...</span>
-        </div>
-      </div>
-      <div class="proj-body">
-        <div class="ptags"><span class="ptag">Planned</span><span class="ptag">Node.js</span><span class="ptag">MySQL</span></div>
-        <div class="pname">Full Stack App</div>
-        <p class="pdesc">A full-stack web application as part of my backend learning journey. Will include user auth, database, and a clean REST API.</p>
-      </div>
-    </div>
+
   </div>
 </section>
 
@@ -691,7 +702,7 @@ footer{background:var(--bg2);border-top:1px solid var(--border);padding:2.5rem 5
 <!-- FOOTER -->
 <footer>
   <span class="flogo">SK.</span>
-  <p class="fp">© 2025 Sk Kutubuddin. Crafted with <span>♥</span> &amp; lots of chai.</p>
+  <p class="fp">© 2026 Sk Kutubuddin. Crafted with <span>♥</span> &amp; lots of chai.</p>
   <p class="fcode">Kolkata, India 🇮🇳 &hearts;</p>
 </footer>
 
@@ -720,33 +731,22 @@ const mqi=["HTML5","CSS3","JavaScript","Python","C Programming","Git & GitHub","
 const t=document.getElementById('mqt');
 [...mqi,...mqi].forEach(s=>{const d=document.createElement('div');d.className='mq-item';d.innerHTML=s+'<span class="mq-dot"></span>';t.appendChild(d)});
 
-// BIDIRECTIONAL REVEAL — animates in AND out on scroll
+// BIDIRECTIONAL REVEAL
 const allRv=[...document.querySelectorAll('.rv,.rvl,.rvr')];
 const io=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
-    if(e.isIntersecting){
-      e.target.classList.add('vis');
-    } else {
-      // Remove vis so animation replays when scrolled back up
-      e.target.classList.remove('vis');
-    }
+    if(e.isIntersecting){e.target.classList.add('vis')}
+    else{e.target.classList.remove('vis')}
   });
 },{threshold:.12});
 allRv.forEach(el=>io.observe(el));
 
-// SKILL BARS — re-trigger on scroll up too
+// SKILL BARS
 const skillFills=document.querySelectorAll('.sk-fill');
-let barsAnimated=false;
 const sio=new IntersectionObserver(en=>{
   en.forEach(e=>{
-    if(e.isIntersecting){
-      skillFills.forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+'%'},200)});
-      barsAnimated=true;
-    } else {
-      // Reset bars so they animate again on re-enter
-      skillFills.forEach(b=>{b.style.width='0'});
-      barsAnimated=false;
-    }
+    if(e.isIntersecting){skillFills.forEach(b=>{setTimeout(()=>{b.style.width=b.dataset.w+'%'},200)})}
+    else{skillFills.forEach(b=>{b.style.width='0'})}
   });
 },{threshold:.2});
 document.querySelectorAll('.skills-sec').forEach(el=>sio.observe(el));
