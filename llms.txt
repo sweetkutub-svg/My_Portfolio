@@ -1,0 +1,22 @@
+# Sk Kutubuddin
+
+> Sk Kutubuddin is a freelance web developer and Python programmer from Durgapur, West Bengal, India. He builds responsive websites (restaurant and e-commerce sites), Python automation tools and an AI voice assistant. He is a third-year Computer Science & Technology diploma student at Bengal Institute of Polytechnic (2024-2027) and is open to freelance projects and software internships.
+
+## Main pages
+- [Portfolio](https://codewithkutub.online/): projects, skills, journey and contact details
+- [Resume (PDF)](https://codewithkutub.online/Kutub_Resume.pdf): full resume
+
+## Projects
+- [MAISON Store](https://sweetkutub-svg.github.io/maison-store_E-Commarce/): luxury fashion e-commerce site with cart, wishlist and size guide (HTML, CSS, JavaScript)
+- [Mondol Restaurant](https://sweetkutub-svg.github.io/MondolRestaurant/): restaurant website with menu filtering and table reservation (HTML, CSS, JavaScript)
+- [Rao's Restaurant](https://sweetkutub-svg.github.io/Rao-s-Resturent/): premium dining site with animations and full menu (HTML, CSS, JavaScript)
+- [Imli Mix](https://sweetkutub-svg.github.io/Imli_mix/): responsive web application, first web project (HTML, CSS, JavaScript)
+- Nova: Python voice assistant with speech recognition, Flask backend and LLM conversation engine with memory ([GitHub](https://github.com/sweetkutub-svg))
+
+## Skills
+Python, Java, C, JavaScript, HTML5, CSS3, Flask, MySQL, Git, GitHub, responsive design, data structures, algorithms, OOP, DBMS
+
+## Links
+- [GitHub](https://github.com/sweetkutub-svg)
+- [LinkedIn](https://www.linkedin.com/in/sk-kutubuddin-6377a1391/)
+- Email: codewithkutub@gmail.com
