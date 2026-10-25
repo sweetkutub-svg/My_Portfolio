@@ -1,7 +1,10 @@
+# codewithkutub.online
+# Everything public is open to search engines and AI search/answer crawlers.
+
 User-agent: *
 Allow: /
 
-# AI / answer-engine crawlers
+# AI search and assistant crawlers (explicitly allowed)
 User-agent: GPTBot
 Allow: /
 User-agent: OAI-SearchBot
@@ -12,9 +15,23 @@ User-agent: ClaudeBot
 Allow: /
 User-agent: Claude-SearchBot
 Allow: /
+User-agent: Claude-User
+Allow: /
 User-agent: PerplexityBot
 Allow: /
+User-agent: Perplexity-User
+Allow: /
 User-agent: Google-Extended
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: Amazonbot
+Allow: /
+User-agent: DuckAssistBot
+Allow: /
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://codewithkutub.online/sitemap.xml
